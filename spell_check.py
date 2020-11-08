@@ -1,7 +1,7 @@
 corpus = []
 
 def loadCorpus():
-    #function to load the dictionary/corpus and store it in a globla list
+    #function to load the dictionary/corpus and store it in a global list
     with open('hindi_corpus.txt',encoding='utf-8') as file:
         a=1
         for word in file:
@@ -34,6 +34,7 @@ def getLevenshteinDistance(s, t):
 
 def getCorrectWord(word):
     min_dis=100
+    correct_word=""
     for s in corpus:
         cur_dis = getLevenshteinDistance(s,word)
         if min_dis > cur_dis :
